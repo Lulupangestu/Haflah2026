@@ -1,0 +1,1354 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lorong Wisudawan Digital SDIT Ibnul Qayyim Makassar</title>
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- Google Fonts: Inter & Playfair Display -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Playfair+Display:ital,wght@0,600;0,700;0,800;1,600&display=swap" rel="stylesheet">
+    <!-- Font Awesome Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <!-- Three.js -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
+    <style>
+        body {
+            font-family: 'Inter', sans-serif;
+            overflow-x: hidden;
+            background-color: #0b130f;
+            color: #f3f4f6;
+            user-select: none;
+        }
+        .font-serif {
+            font-family: 'Playfair Display', serif;
+        }
+        /* Custom Scrollbar for Popups */
+        ::-webkit-scrollbar {
+            width: 6px;
+        }
+        ::-webkit-scrollbar-track {
+            background: rgba(255, 255, 255, 0.05);
+            border-radius: 10px;
+        }
+        ::-webkit-scrollbar-thumb {
+            background: rgba(212, 175, 55, 0.5);
+            border-radius: 10px;
+        }
+        ::-webkit-scrollbar-thumb:hover {
+            background: rgba(212, 175, 55, 0.8);
+        }
+        /* Glassmorphism Classes */
+        .glass-panel {
+            background: rgba(15, 28, 22, 0.8);
+            backdrop-filter: blur(12px);
+            -webkit-backdrop-filter: blur(12px);
+            border: 1px solid rgba(212, 175, 55, 0.25);
+        }
+        /* Glowing effects */
+        .glow-gold {
+            box-shadow: 0 0 20px rgba(212, 175, 55, 0.3);
+        }
+        .glow-text-gold {
+            text-shadow: 0 0 10px rgba(212, 175, 55, 0.5);
+        }
+        /* Transitions */
+        .transition-all-500 {
+            transition: all 0.5s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+    </style>
+</head>
+<body class="relative min-h-screen">
+
+    
+    <!-- Opening Screen / Entrance Portal -->
+    <div id="opening-screen" class="fixed inset-0 z-40 flex flex-col items-center justify-center p-4 bg-gradient-to-b from-[#06140d] via-[#0c2217] to-[#040c08] transition-all duration-1000 overflow-y-auto">
+        <!-- Background Islamic Pattern Accent -->
+        <div class="absolute inset-0 opacity-5 pointer-events-none flex items-center justify-center">
+            <svg class="w-full h-full max-w-4xl" viewBox="0 0 100 100">
+                <path fill="currentColor" class="text-amber-500" d="M50 0 L60 30 L90 40 L60 50 L50 80 L40 50 L10 40 L40 30 Z" />
+                <path fill="currentColor" class="text-amber-500" d="M50 20 L55 35 L70 40 L55 45 L50 60 L45 45 L30 40 L45 35 Z" />
+            </svg>
+        </div>
+
+        <div class="max-w-2xl w-full text-center z-10 space-y-8 px-4 py-8 glass-panel rounded-2xl border-2 border-amber-500/30 shadow-2xl scale-100 transform transition-transform duration-500">
+            <!-- School Emblem/Logo Frame -->
+            <div class="relative mx-auto w-32 h-32 bg-emerald-900/50 rounded-full border-4 border-amber-500 flex items-center justify-center glow-gold">
+                <div class="absolute inset-2 border border-amber-500/30 rounded-full animate-spin-slow"></div>
+                <!-- Custom SVG School Logo -->
+                <svg class="w-20 h-20 text-amber-400" viewBox="0 0 100 100" fill="none" stroke="currentColor" stroke-width="2.5">
+                    <!-- Dome -->
+                    <path d="M50 15 C30 15 25 35 25 55 L75 55 C75 35 70 15 50 15 Z" fill="currentColor" class="opacity-15"/>
+                    <path d="M50 15 C30 15 25 35 25 55 L75 55 C75 35 70 15 50 15 Z" />
+                    <!-- Crescent / Star -->
+                    <circle cx="50" cy="35" r="4" fill="currentColor"/>
+                    <!-- Book / Al-Quran -->
+                    <path d="M30 65 L50 55 L70 65 L50 75 Z" fill="currentColor" class="opacity-30"/>
+                    <path d="M25 65 Q50 50 75 65" />
+                    <path d="M25 70 Q50 55 75 70" />
+                    <line x1="50" y1="52" x2="50" y2="78" />
+                    <!-- Minaret Top -->
+                    <path d="M50 5 L50 15" />
+                </svg>
+            </div>
+
+            <div class="space-y-3">
+                <span class="text-xs tracking-[0.3em] font-semibold text-amber-400 uppercase block">Haflah Akhirussanah</span>
+                <h1 class="text-3xl md:text-5xl font-extrabold font-serif text-white leading-tight">
+                    LORONG WISUDAWAN DIGITAL
+                </h1>
+                <h2 class="text-lg md:text-xl text-amber-100 font-medium">
+                    SDIT Ibnul Qayyim Makassar
+                </h2>
+                <div class="inline-flex items-center gap-2 px-4 py-1.5 bg-amber-500/10 border border-amber-500/20 rounded-full text-sm text-amber-300 font-mono">
+                    <i class="far fa-calendar-alt"></i> Tahun Ajaran 2025/2026
+                </div>
+            </div>
+
+            <!-- Welcoming Quran Verse -->
+            <div class="p-4 bg-emerald-950/60 rounded-xl border border-amber-500/10 italic text-sm text-gray-300 max-w-lg mx-auto leading-relaxed">
+                "Niscaya Allah akan meninggikan orang-orang yang beriman di antaramu dan orang-orang yang diberi ilmu pengetahuan beberapa derajat."
+                <span class="block text-amber-400 mt-1 font-semibold not-italic text-xs font-mono">— Q.S. Al-Mujadilah: 11</span>
+            </div>
+
+            <!-- Start Button -->
+            <div class="pt-4">
+                <button id="btn-enter" class="relative group px-8 py-4 bg-gradient-to-r from-amber-600 to-amber-400 text-emerald-950 text-lg font-bold rounded-xl shadow-lg shadow-amber-500/20 hover:shadow-amber-500/40 hover:scale-105 active:scale-95 transition-all duration-300 overflow-hidden">
+                    <span class="relative z-10 flex items-center justify-center gap-3">
+                        Masuk Lorong Wisudawan <i class="fas fa-sign-in-alt animate-pulse"></i>
+                    </span>
+                    <span class="absolute inset-0 w-full h-full bg-gradient-to-r from-amber-400 to-yellow-300 opacity-0 group-hover:opacity-100 transition-opacity duration-300"></span>
+                </button>
+            </div>
+        </div>
+
+        <!-- Footer Credits -->
+        <div class="absolute bottom-4 text-xs text-gray-400/80 font-mono text-center">
+            &copy; 2026 SDIT Ibnul Qayyim Makassar. All Rights Reserved.
+        </div>
+    </div>
+
+
+    <!-- Main 3D Canvas Container -->
+    <div id="canvas-container" class="absolute inset-0 w-full h-full z-0"></div>
+
+    <!-- On-Screen HUD Guide (Fades away once movement begins) -->
+    <div id="hud-guide" class="fixed bottom-6 left-1/2 transform -translate-x-1/2 z-20 pointer-events-none flex flex-col items-center gap-2 bg-emerald-950/80 border border-amber-500/20 px-6 py-3 rounded-full shadow-2xl backdrop-blur-md transition-opacity duration-500">
+        <div class="flex items-center gap-3 text-sm text-amber-300 font-medium">
+            <span class="flex items-center gap-1"><i class="fas fa-mouse"></i> Scroll</span>
+            <span class="text-gray-500">atau</span>
+            <span class="flex items-center gap-1"><i class="fas fa-arrows-alt-v"></i> Drag Naik/Turun</span>
+            <span class="text-gray-500">untuk berjalan menyusuri lorong</span>
+        </div>
+    </div>
+
+    <!-- Interactive Navigation Sidebar Overlay -->
+    <div id="sidebar-panel" class="fixed bottom-4 left-4 z-30 flex flex-col gap-2 scale-90 md:scale-100 origin-bottom-left">
+        <!-- Progress Bar Indicator -->
+        <div class="glass-panel p-3 rounded-xl flex flex-col gap-1 w-64 shadow-xl">
+            <div class="flex justify-between text-xs font-semibold text-amber-400 font-mono">
+                <span>POSISI LORONG</span>
+                <span id="progress-text">0%</span>
+            </div>
+            <div class="w-full bg-emerald-950 rounded-full h-2 overflow-hidden border border-amber-500/10">
+                <div id="progress-bar" class="bg-gradient-to-r from-amber-600 to-amber-400 h-full w-0 transition-all duration-300"></div>
+            </div>
+        </div>
+
+        <!-- Walk Assistance buttons (great for mobile/tablet screen clicks) -->
+        <div class="flex gap-2">
+            <button id="btn-walk-back" class="bg-emerald-950/90 border border-amber-500/20 text-amber-300 flex-1 py-2 rounded-lg font-bold hover:bg-amber-500 hover:text-emerald-950 transition-all active:scale-95 flex items-center justify-center gap-2 shadow-lg">
+                <i class="fas fa-chevron-down"></i> Mundur
+            </button>
+            <button id="btn-walk-forward" class="bg-amber-500 border border-amber-400 text-emerald-950 flex-1 py-2 rounded-lg font-bold hover:bg-amber-400 transition-all active:scale-95 flex items-center justify-center gap-2 shadow-lg">
+                Maju <i class="fas fa-chevron-up"></i>
+            </button>
+        </div>
+    </div>
+
+    <!-- Help Info Button (Bottom-Right) -->
+    <div class="fixed bottom-4 right-4 z-30">
+        <button id="btn-info" class="bg-emerald-950/80 border border-amber-500/30 text-amber-400 w-12 h-12 rounded-full hover:bg-amber-500 hover:text-emerald-950 transition-all duration-300 shadow-lg flex items-center justify-center text-lg">
+            <i class="fas fa-info-circle"></i>
+        </button>
+    </div>
+
+
+    <!-- Info/Help Modal -->
+    <div id="modal-info" class="fixed inset-0 z-50 flex items-center justify-center p-4 bg-black/60 backdrop-blur-sm hidden">
+        <div class="glass-panel rounded-2xl w-full max-w-md p-6 border-2 border-amber-500/30 shadow-2xl relative space-y-4">
+            <button id="btn-close-info" class="absolute top-4 right-4 text-gray-400 hover:text-amber-400 transition-all text-xl">
+                <i class="fas fa-times"></i>
+            </button>
+            <h3 class="text-xl font-bold font-serif text-amber-400 flex items-center gap-2 border-b border-amber-500/20 pb-2">
+                <i class="fas fa-compass"></i> Panduan Eksplorasi
+            </h3>
+            <div class="space-y-3 text-sm text-gray-300 leading-relaxed">
+                <p>Selamat datang di Lorong Wisuda Virtual SDIT Ibnul Qayyim Makassar.</p>
+                <ul class="space-y-2 list-none">
+                    <li class="flex items-start gap-2">
+                        <i class="fas fa-mouse text-amber-400 mt-1"></i>
+                        <span>Gunakan <strong>Mouse Scroll</strong> atau <strong>Tombol Navigasi</strong> di kiri bawah untuk meluncur melintasi lorong wisuda.</span>
+                    </li>
+                    <li class="flex items-start gap-2">
+                        <i class="fas fa-hand-pointer text-amber-400 mt-1"></i>
+                        <span><strong>Klik Bingkai Foto</strong> siswa mana saja di dinding lorong untuk menampilkan profil lengkap mereka secara detail.</span>
+                    </li>
+                    <li class="flex items-start gap-2">
+                        <i class="fas fa-trophy text-amber-400 mt-1"></i>
+                        <span>Meluncurlah hingga ujung lorong untuk menyaksikan area panggung megah <strong>Peserta Didik Terbaik</strong> dan salam kelulusan.</span>
+                    </li>
+                </ul>
+            </div>
+            <button id="btn-close-info-ok" class="w-full bg-amber-500 text-emerald-950 py-2.5 rounded-lg font-bold hover:bg-amber-400 transition-all">
+                Mengerti
+            </button>
+        </div>
+    </div>
+
+    <!-- Student Detail Modal (Glassmorphic & Elegant) -->
+    <div id="modal-student" class="fixed inset-0 z-50 flex items-center justify-center p-4 bg-black/70 backdrop-blur-md hidden opacity-0 transition-opacity duration-300">
+        <div class="glass-panel rounded-2xl w-full max-w-2xl overflow-hidden border-2 border-amber-500 shadow-2xl relative flex flex-col md:flex-row transform scale-95 transition-transform duration-300">
+            <!-- Close Button -->
+            <button id="btn-close-student" class="absolute top-4 right-4 z-10 bg-black/40 text-gray-300 hover:text-white hover:bg-amber-500 p-2 rounded-full transition-all w-10 h-10 flex items-center justify-center">
+                <i class="fas fa-times"></i>
+            </button>
+
+            <!-- Profile Left Side (Photo/Avatar card) -->
+            <div class="md:w-2/5 bg-gradient-to-b from-emerald-950 to-emerald-900 p-6 flex flex-col items-center justify-center text-center border-b md:border-b-0 md:border-r border-amber-500/20 relative">
+                <div class="absolute inset-0 opacity-10 pointer-events-none">
+                    <!-- Geometric bg for card -->
+                    <svg class="w-full h-full" viewBox="0 0 100 100">
+                        <path fill="currentColor" class="text-amber-500" d="M0 0 L100 100 M100 0 L0 100" stroke="currentColor" stroke-width="2"/>
+                    </svg>
+                </div>
+                <!-- Profile Image Canvas Container -->
+                <div class="relative w-36 h-36 md:w-40 md:h-40 rounded-full border-4 border-amber-500 bg-emerald-950 overflow-hidden shadow-lg glow-gold z-10">
+                    <canvas id="modal-photo-canvas" class="w-full h-full object-cover"></canvas>
+                </div>
+                <!-- Student ID / Toga Icon decoration -->
+                <span class="mt-4 px-3 py-1 bg-amber-500/20 border border-amber-500/30 rounded-full text-xs font-semibold text-amber-300 tracking-wider uppercase z-10 font-mono">
+                    <i class="fas fa-graduation-cap"></i> Alumni 2026
+                </span>
+            </div>
+
+            <!-- Profile Right Side (Bio Details) -->
+            <div class="md:w-3/5 p-5 md:p-6 flex flex-col justify-between space-y-4">
+                <div>
+                    <h3 id="student-name" class="text-xl md:text-2xl font-bold font-serif text-white leading-tight glow-text-gold">
+                        NAMA SISWA LENGKAP
+                    </h3>
+                    <p class="text-xs md:text-sm text-amber-400 font-medium">Wisudawan Angkatan XV</p>
+                </div>
+
+                <!-- Bio attributes grid -->
+                <div class="grid grid-cols-1 sm:grid-cols-2 gap-2.5 text-xs md:text-sm">
+                    <div class="p-2 bg-emerald-950/40 rounded-lg border border-amber-500/10">
+                        <span class="text-[10px] md:text-xs text-amber-400/80 block uppercase tracking-wider font-semibold font-mono">Nama Orang Tua</span>
+                        <span id="student-parents" class="text-white font-medium">Bapak / Ibu</span>
+                    </div>
+                    <div class="p-2 bg-emerald-950/40 rounded-lg border border-amber-500/10">
+                        <span class="text-[10px] md:text-xs text-amber-400/80 block uppercase tracking-wider font-semibold font-mono">Alamat</span>
+                        <span id="student-address" class="text-white font-medium">Jl. Makassar</span>
+                    </div>
+                    <div class="p-2 bg-emerald-950/40 rounded-lg border border-amber-500/10">
+                        <span class="text-[10px] md:text-xs text-amber-400/80 block uppercase tracking-wider font-semibold font-mono">Hobi</span>
+                        <span id="student-hobby" class="text-white font-medium">Hobi</span>
+                    </div>
+                    <div class="p-2 bg-emerald-950/40 rounded-lg border border-amber-500/10">
+                        <span class="text-[10px] md:text-xs text-amber-400/80 block uppercase tracking-wider font-semibold font-mono">Cita-Cita</span>
+                        <span id="student-dream" class="text-white font-medium">Cita-Cita</span>
+                    </div>
+                </div>
+
+                <!-- Next School Target -->
+                <div class="p-2.5 bg-gradient-to-r from-amber-600/10 to-amber-400/5 rounded-lg border border-amber-500/25">
+                    <span class="text-[10px] md:text-xs text-amber-300 block uppercase tracking-wider font-bold font-mono">Sekolah Lanjutan</span>
+                    <span id="student-nextschool" class="text-white font-semibold text-xs md:text-sm">SMP IT / MTS Terbaik</span>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div id="finale-overlay" class="fixed inset-0 z-30 flex items-center justify-center bg-gradient-to-b from-[#06140d]/98 via-[#081c13]/99 to-[#020805]/98 backdrop-blur-md overflow-y-auto hidden opacity-0 transition-opacity duration-1000 p-4">
+        <div class="max-w-4xl w-full space-y-8 py-8 px-4 md:px-6">
+            <!-- Main Title Header -->
+            <div class="text-center space-y-3">
+                <span class="text-sm md:text-base font-bold text-amber-400 tracking-widest uppercase block animate-bounce">🏆 PENGHARGAAN UTAMA 🏆</span>
+                <h2 class="text-2xl md:text-4xl font-extrabold font-serif text-white leading-tight">
+                    PESERTA DIDIK TERBAIK
+                </h2>
+                <div class="h-1 w-24 bg-amber-500 mx-auto rounded-full glow-gold"></div>
+            </div>
+
+            <!-- Podium Display -->
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8 md:gap-6 items-end pt-8 max-w-3xl mx-auto">
+                <!-- 2nd Winner (Left) -->
+                <div class="bg-gradient-to-b from-slate-900/80 to-slate-900/40 border-2 border-slate-400/30 rounded-2xl p-5 text-center shadow-xl order-2 md:order-1 relative transform md:hover:scale-105 transition-all duration-300 mt-6 md:mt-0">
+                    <span class="absolute -top-6 left-1/2 transform -translate-x-1/2 bg-slate-400 text-slate-950 w-11 h-11 rounded-full border-4 border-white flex items-center justify-center text-lg font-bold shadow-lg">🥈</span>
+                    <div class="w-20 h-20 md:w-24 md:h-24 rounded-full border-4 border-slate-400 mx-auto overflow-hidden bg-slate-800 mb-3 shadow-md">
+                        <canvas id="podium-2-canvas" class="w-full h-full object-cover"></canvas>
+                    </div>
+                    <h3 class="font-bold text-base md:text-lg text-white">Sitti Humaira Khairunnisa</h3>
+                    <p class="text-[10px] md:text-xs text-slate-400 uppercase font-mono mt-0.5">Terbaik II</p>
+                    <div class="mt-3 p-2 bg-slate-400/10 rounded-lg text-slate-300 text-xs font-semibold italic border border-slate-400/20">
+                        Juara I Olimpiade Matematika Sulawesi Selatan
+                    </div>
+                </div>
+
+                <!-- 1st Winner (Center) -->
+                <div class="bg-gradient-to-b from-amber-950/80 to-amber-950/40 border-2 border-amber-500/60 rounded-2xl p-6 text-center shadow-2xl order-1 md:order-2 relative transform md:scale-105 z-10 hover:scale-110 transition-all duration-300">
+                    <span class="absolute -top-7 left-1/2 transform -translate-x-1/2 bg-amber-500 text-emerald-950 w-13 h-13 rounded-full border-4 border-white flex items-center justify-center text-xl font-bold shadow-lg glow-gold">🥇</span>
+                    <div class="w-24 h-24 md:w-28 md:h-28 rounded-full border-4 border-amber-500 mx-auto overflow-hidden bg-emerald-950 mb-3 shadow-lg glow-gold">
+                        <canvas id="podium-1-canvas" class="w-full h-full object-cover"></canvas>
+                    </div>
+                    <h3 class="font-bold text-lg md:text-xl text-white glow-text-gold">Muhammad Fatih Al-Ghazali</h3>
+                    <p class="text-[10px] md:text-xs text-amber-400 uppercase font-mono mt-0.5 font-bold">Terbaik I</p>
+                    <div class="mt-3 p-2.5 bg-amber-500/15 rounded-lg text-amber-300 text-xs font-semibold italic border border-amber-500/30 glow-gold">
+                        Penghafal Quran 30 Juz Tercepat &amp; Mumtaz
+                    </div>
+                </div>
+
+                <!-- 3rd Winner (Right) -->
+                <div class="bg-gradient-to-b from-amber-900/50 to-amber-900/20 border-2 border-amber-800/40 rounded-2xl p-5 text-center shadow-xl order-3 md:order-3 relative transform md:hover:scale-105 transition-all duration-300 mt-6 md:mt-0">
+                    <span class="absolute -top-6 left-1/2 transform -translate-x-1/2 bg-amber-700 text-white w-11 h-11 rounded-full border-4 border-white flex items-center justify-center text-lg font-bold shadow-lg">🥉</span>
+                    <div class="w-20 h-20 md:w-24 md:h-24 rounded-full border-4 border-amber-800 mx-auto overflow-hidden bg-amber-950 mb-3 shadow-md">
+                        <canvas id="podium-3-canvas" class="w-full h-full object-cover"></canvas>
+                    </div>
+                    <h3 class="font-bold text-base md:text-lg text-white">Andi Ahmad Wijaya</h3>
+                    <p class="text-[10px] md:text-xs text-amber-600 uppercase font-mono mt-0.5">Terbaik III</p>
+                    <div class="mt-3 p-2 bg-amber-800/10 rounded-lg text-amber-400/90 text-xs font-semibold italic border border-amber-800/20">
+                        Lulusan dengan Nilai Akademik Sempurna (IP 4.00)
+                    </div>
+                </div>
+            </div>
+
+            <!-- Navigation Buttons to Restart or Explore -->
+            <div class="flex flex-col sm:flex-row gap-4 items-center justify-center pt-8 border-t border-amber-500/20">
+                <button id="btn-restart" class="w-full sm:w-auto px-6 py-3 bg-emerald-950 border border-amber-500/30 text-amber-400 font-bold rounded-xl hover:bg-amber-500 hover:text-emerald-950 transition-all shadow-lg active:scale-95 flex items-center justify-center gap-2">
+                    <i class="fas fa-undo"></i> Kembali Jelajahi Lorong
+                </button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Active Confetti Canvas Overlay (When landing on end of hallway) -->
+    <canvas id="confetti-canvas" class="fixed inset-0 pointer-events-none z-50 hidden w-full h-full"></canvas>
+
+    <script>
+        // -------------------------------------------------------------
+        // DUMMY STUDENT DATA GENERATION (52 Students with Islamic names, parents, Makassar addresses, etc.)
+        // -------------------------------------------------------------
+        const students = [];
+        const makassarAddresses = [
+            "Jl. Sultan Alauddin No. 45, Rappocini",
+            "Jl. Perintis Kemerdekaan KM 10, Tamalanrea",
+            "Jl. AP Pettarani Blok B/12, Panakkukang",
+            "Jl. Letjen Hertasning Raya No. 102",
+            "Jl. Rappocini Raya No. 89, Rappocini",
+            "Jl. Toddopuli Raya No. 34, Panakkukang",
+            "Jl. Veteran Selatan No. 222",
+            "Jl. Urip Sumoharjo No. 56",
+            "Jl. Daeng Tata Raya No. 12, Tamalate",
+            "Jl. Sunu No. 15, Bontoala",
+            "Jl. Bandang No. 8, Wajo",
+            "Jl. Rajawali No. 3, Mariso"
+        ];
+        const nextSchoolsList = [
+            "SMPIT Ibnul Qayyim Makassar",
+            "MTSN 1 Kota Makassar",
+            "SMP Islam Al-Azhar Makassar",
+            "Pondok Pesantren Daarul Huffadh",
+            "SMPIT Nurul Fikri Makassar",
+            "SMP Muhammadiyah 1 Makassar",
+            "Pondok Pesantren Gontor",
+            "SMP Islam Athirah Makassar",
+            "MTS Al-Fakhriyah Makassar",
+            "SMPIT Wahdah Islamiyah"
+        ];
+        const hobbiesList = [
+            "Membaca Buku Sejarah", "Menghafal Quran", "Bermain Futsal", 
+            "Menggambar Kaligrafi", "Koding Scratch", "Berenang", 
+            "Bersepeda", "Robotika", "Menulis Cerita Pendek", "Mencari Eksperimen Sains"
+        ];
+        const dreamsList = [
+            "Ustadz / Da'i Internasional", "Dokter Hafiz Quran", "Software Engineer Rabbani", 
+            "Astronom Muslim", "Menteri Pendidikan", "Arsitek Masjid Modern", 
+            "Pengusaha Syariah Sukses", "Pilot Profesional", "Dosen Sains Islam"
+        ];
+        const firstNamesBoys = [
+            "Muhammad", "Ahmad", "Andi", "Fatih", "Zaid", "Hamzah", "Ali", "Umar", "Usman", "Raihan", 
+            "Hassan", "Hussein", "Rizky", "Yusuf", "Ibrahim", "Abdurrahman", "Bilal", "Sufyan", "Yasin"
+        ];
+        const lastNamesBoys = [
+            "Al-Fatih", "Al-Ghazali", "Wibowo", "Hidayah", "Nugraha", "Syahputra", "Pratama", "Wijaya", 
+            "Ramadhan", "Rabbani", "Ar-Rasyid", "Al-Kahfi", "Mutawakkil", "Mubarak", "Farabi"
+        ];
+        const firstNamesGirls = [
+            "Aisyah", "Fatimah", "Khadijah", "Siti", "Nur", "Zahra", "Humaira", "Syafira", "Nabila", 
+            "Annisa", "Salma", "Naylah", "Safiyyah", "Amina", "Yasmin", "Layla", "Balqis", "Hana"
+        ];
+        const lastNamesGirls = [
+            "Az-Zahra", "Humaira", "Khairunnisa", "Salsabila", "Nadhirah", "Wahyuni", "Ramadhani", 
+            "Zulkifli", "Hasanah", "Shalihah", "Maulida", "Syarif", "Fajrina", "Azzahra"
+        ];
+
+        // Seed 52 complete student datasets
+        for (let i = 1; i <= 52; i++) {
+            let gender = i % 2 === 0 ? 'F' : 'M';
+            let name = "";
+            let parent = "";
+            
+            if (gender === 'M') {
+                let first = firstNamesBoys[Math.floor(Math.random() * firstNamesBoys.length)];
+                let last = lastNamesBoys[Math.floor(Math.random() * lastNamesBoys.length)];
+                name = `${first} ${last} ${i}`;
+                parent = `H. ${firstNamesBoys[Math.floor(Math.random() * firstNamesBoys.length)]} ${lastNamesBoys[Math.floor(Math.random() * lastNamesBoys.length)]}`;
+            } else {
+                let first = firstNamesGirls[Math.floor(Math.random() * firstNamesGirls.length)];
+                let last = lastNamesGirls[Math.floor(Math.random() * lastNamesGirls.length)];
+                name = `${first} ${last} ${i}`;
+                parent = `${firstNamesBoys[Math.floor(Math.random() * firstNamesBoys.length)]} ${lastNamesBoys[Math.floor(Math.random() * lastNamesBoys.length)]}`;
+            }
+
+            students.push({
+                id: i,
+                name: name,
+                gender: gender,
+                parent: parent,
+                address: makassarAddresses[Math.floor(Math.random() * makassarAddresses.length)],
+                hobby: hobbiesList[Math.floor(Math.random() * hobbiesList.length)],
+                dream: dreamsList[Math.floor(Math.random() * dreamsList.length)],
+                nextSchool: nextSchoolsList[Math.floor(Math.random() * nextSchoolsList.length)]
+            });
+        }
+
+        // Configure Top 3 Students (First 3 indices)
+        students[0].name = "Muhammad Fatih Al-Ghazali";
+        students[0].gender = 'M';
+        students[0].achievement = "Penghafal Quran 30 Juz Tercepat & Mumtaz";
+        students[0].dream = "Ulama & Astronom Muslim";
+
+        students[1].name = "Sitti Humaira Khairunnisa";
+        students[1].gender = 'F';
+        students[1].achievement = "Juara I Olimpiade Matematika Sulawesi Selatan";
+        students[1].dream = "Akademisi & Peneliti Muslimah";
+
+        students[2].name = "Andi Ahmad Wijaya";
+        students[2].gender = 'M';
+        students[2].achievement = "Lulusan dengan Nilai Akademik Sempurna (IP 4.00)";
+        students[2].dream = "Dosen & Ilmuwan Robitika Syariah";
+
+
+        // -------------------------------------------------------------
+        // PROCEDURAL CANVAS PORTRAIT GENERATOR
+        // -------------------------------------------------------------
+        // Draws high quality geometric student avatar on canvas so we do not have external broken image link dependencies
+        function drawStudentAvatar(canvas, studentName, gender, isGold = false) {
+            const ctx = canvas.getContext('2d');
+            const w = canvas.width = 300;
+            const h = canvas.height = 300;
+
+            // Background gradient
+            const grad = ctx.createLinearGradient(0, 0, 0, h);
+            if (isGold) {
+                grad.addColorStop(0, '#2e1c0c');
+                grad.addColorStop(0.5, '#4a321a');
+                grad.addColorStop(1, '#1f1307');
+            } else if (gender === 'M') {
+                grad.addColorStop(0, '#061a12');
+                grad.addColorStop(0.5, '#0e2f20');
+                grad.addColorStop(1, '#030c08');
+            } else {
+                grad.addColorStop(0, '#100b1d');
+                grad.addColorStop(0.5, '#22193e');
+                grad.addColorStop(1, '#080510');
+            }
+            ctx.fillStyle = grad;
+            ctx.fillRect(0, 0, w, h);
+
+            // Subtle background design
+            ctx.strokeStyle = 'rgba(212, 175, 55, 0.15)';
+            ctx.lineWidth = 1;
+            for (let r = 20; r < w; r += 20) {
+                ctx.beginPath();
+                ctx.arc(w/2, h/2, r, 0, Math.PI * 2);
+                ctx.stroke();
+            }
+
+            // Draw graduate body
+            ctx.fillStyle = isGold ? '#b8860b' : '#0a3a25'; // Gown body
+            ctx.beginPath();
+            ctx.moveTo(w/2 - 60, h);
+            ctx.quadraticCurveTo(w/2 - 70, h - 70, w/2 - 50, h - 80);
+            ctx.lineTo(w/2 + 50, h - 80);
+            ctx.quadraticCurveTo(w/2 + 70, h - 70, w/2 + 60, h);
+            ctx.closePath();
+            ctx.fill();
+
+            // Sash (Samir Wisuda)
+            ctx.fillStyle = '#d4af37'; // Gold Ribbon sash
+            ctx.beginPath();
+            ctx.moveTo(w/2 - 25, h - 80);
+            ctx.lineTo(w/2 - 35, h);
+            ctx.lineTo(w/2 - 15, h);
+            ctx.lineTo(w/2 - 10, h - 75);
+            ctx.closePath();
+            ctx.fill();
+
+            ctx.beginPath();
+            ctx.moveTo(w/2 + 25, h - 80);
+            ctx.lineTo(w/2 + 35, h);
+            ctx.lineTo(w/2 + 15, h);
+            ctx.lineTo(w/2 + 10, h - 75);
+            ctx.closePath();
+            ctx.fill();
+
+            // Round Medal/Badge
+            ctx.fillStyle = '#ffdf00';
+            ctx.beginPath();
+            ctx.arc(w/2, h - 30, 15, 0, Math.PI*2);
+            ctx.fill();
+            ctx.strokeStyle = '#996515';
+            ctx.lineWidth = 2;
+            ctx.stroke();
+
+            // Face
+            ctx.fillStyle = '#f9d29d'; // Skin tone
+            ctx.beginPath();
+            ctx.arc(w/2, h/2 - 10, 38, 0, Math.PI * 2);
+            ctx.fill();
+
+            // Eyes & Smile
+            ctx.fillStyle = '#332211';
+            ctx.beginPath();
+            ctx.arc(w/2 - 14, h/2 - 15, 3, 0, Math.PI*2);
+            ctx.arc(w/2 + 14, h/2 - 15, 3, 0, Math.PI*2);
+            ctx.fill();
+            // Smiling mouth
+            ctx.strokeStyle = '#8b4513';
+            ctx.lineWidth = 2.5;
+            ctx.beginPath();
+            ctx.arc(w/2, h/2 - 2, 10, 0, Math.PI);
+            ctx.stroke();
+
+            // Hijab (for female) or Hair/Peci (for male)
+            if (gender === 'F') {
+                ctx.fillStyle = '#ffffff'; // White Hijab
+                ctx.beginPath();
+                // Veil drape
+                ctx.arc(w/2, h/2 - 15, 44, 0, Math.PI, true);
+                ctx.quadraticCurveTo(w/2 - 50, h/2 + 30, w/2 - 45, h - 40);
+                ctx.quadraticCurveTo(w/2, h - 25, w/2 + 45, h - 40);
+                ctx.quadraticCurveTo(w/2 + 50, h/2 + 30, w/2, h/2 - 59); // Join top
+                ctx.closePath();
+                ctx.fill();
+
+                // Inner Cap (Ciput) under hijab
+                ctx.fillStyle = '#b8860b';
+                ctx.beginPath();
+                ctx.arc(w/2, h/2 - 15, 38, Math.PI, Math.PI*1.3);
+                ctx.lineTo(w/2, h/2 - 48);
+                ctx.closePath();
+                ctx.fill();
+            } else {
+                // Peci (Songkok Nasional) or Hair under cap
+                ctx.fillStyle = '#111111'; // Black songkok/peci
+                ctx.fillRect(w/2 - 30, h/2 - 58, 60, 25);
+            }
+
+            // Graduation Toga Cap (Top Hat)
+            ctx.fillStyle = '#111111';
+            ctx.beginPath();
+            ctx.moveTo(w/2, h/2 - 68);
+            ctx.lineTo(w/2 + 55, h/2 - 52);
+            ctx.lineTo(w/2, h/2 - 36);
+            ctx.lineTo(w/2 - 55, h/2 - 52);
+            ctx.closePath();
+            ctx.fill();
+
+            // Hat crown under diamond top
+            ctx.fillStyle = '#222222';
+            ctx.fillRect(w/2 - 20, h/2 - 52, 40, 12);
+
+            // Toga tassel (Tali kuncir kuning)
+            ctx.strokeStyle = '#d4af37';
+            ctx.lineWidth = 2;
+            ctx.beginPath();
+            ctx.moveTo(w/2, h/2 - 52);
+            ctx.lineTo(w/2 - 40, h/2 - 42);
+            ctx.lineTo(w/2 - 42, h/2 - 15);
+            ctx.stroke();
+            // Tassel brush
+            ctx.fillStyle = '#d4af37';
+            ctx.fillRect(w/2 - 45, h/2 - 15, 6, 12);
+
+            // Decorative Frame Border
+            ctx.strokeStyle = isGold ? '#ffdf00' : '#d4af37';
+            ctx.lineWidth = 6;
+            ctx.strokeRect(4, 4, w - 8, h - 8);
+
+            ctx.strokeStyle = '#ffffff';
+            ctx.lineWidth = 1;
+            ctx.strokeRect(10, 10, w - 20, h - 20);
+        }
+
+        // -------------------------------------------------------------
+        // -------------------------------------------------------------
+        // WEB AUDIO API - AMBIENT SOUND GENERATOR
+        // Synthesizes a beautiful warm ambient sound & success chime safely with no external asset requirements
+        let audioCtx = null;
+        let ambientSynthInterval = null;
+        let isMuted = true;
+
+        function initAudio() {
+            if (audioCtx) return;
+            audioCtx = new (window.AudioContext || window.webkitAudioContext)();
+        }
+
+        function playSoftChime() {
+            if (!audioCtx || isMuted) return;
+            const notes = [261.63, 329.63, 392.00, 523.25, 659.25]; // Beautiful major chord notes
+            const note = notes[Math.floor(Math.random() * notes.length)];
+            
+            const osc = audioCtx.createOscillator();
+            const gain = audioCtx.createGain();
+            
+            osc.type = 'triangle';
+            osc.frequency.setValueAtTime(note, audioCtx.currentTime);
+            
+            gain.gain.setValueAtTime(0, audioCtx.currentTime);
+            gain.gain.linearRampToValueAtTime(0.08, audioCtx.currentTime + 0.1);
+            gain.gain.exponentialRampToValueAtTime(0.0001, audioCtx.currentTime + 3);
+            
+            osc.connect(gain);
+            gain.connect(audioCtx.destination);
+            osc.start();
+            osc.stop(audioCtx.currentTime + 3.1);
+        }
+
+        function startAmbientSoundtrack() {
+            initAudio();
+            if (ambientSynthInterval) clearInterval(ambientSynthInterval);
+            
+            // Loop a calming progression of chimes mimicking serene graduation hall
+            ambientSynthInterval = setInterval(() => {
+                if (!isMuted) {
+                    playSoftChime();
+                    if (Math.random() > 0.4) {
+                        setTimeout(playSoftChime, 400);
+                    }
+                }
+            }, 3000);
+        }
+
+        // -------------------------------------------------------------
+        // THREE.JS VIRTUAL WORLD SETUP
+        // -------------------------------------------------------------
+        let scene, camera, renderer;
+        let framesArray = [];
+        let lightPillars = [];
+        let targetCameraZ = 12; // Start position of the camera
+        let currentCameraZ = 12;
+        let raycaster, mouse;
+        let loadingComplete = false;
+        let currentModalStudentId = null;
+
+        // Configuration
+        const hallwayLength = 175; // Total depth of camera movement
+        const stepSize = 6.0; // Spacing between frames on walls
+        const frameScale = 2.4; // 3D Plane dimensions
+
+        // Dynamic Materials Helper
+        function createTextCanvasTexture(student, index) {
+            const canvas = document.createElement('canvas');
+            drawStudentAvatar(canvas, student.name, student.gender);
+            
+            // Write student name at bottom half specifically on 3D frame canvas
+            const ctx = canvas.getContext('2d');
+            ctx.shadowColor = 'black';
+            ctx.shadowBlur = 6;
+            ctx.fillStyle = '#ffffff';
+            ctx.font = 'bold 15px Inter';
+            ctx.textAlign = 'center';
+            // Cut text if too long
+            let displayName = student.name.length > 22 ? student.name.substring(0, 20) + '..' : student.name;
+            ctx.fillText(displayName, canvas.width / 2, canvas.height - 35);
+
+            ctx.fillStyle = '#ffdf00';
+            ctx.font = 'bold 11px Inter';
+            ctx.fillText(`ID: ${student.id}`, canvas.width / 2, canvas.height - 18);
+
+            const texture = new THREE.CanvasTexture(canvas);
+            return texture;
+        }
+
+        function initThreeJS() {
+            const container = document.getElementById('canvas-container');
+            
+            scene = new THREE.Scene();
+            scene.background = new THREE.Color(0x06110b);
+            // Elegant gold fog to give depth to the gallery hallway
+            scene.fog = new THREE.FogExp2(0x06110b, 0.012);
+
+            camera = new THREE.PerspectiveCamera(55, container.clientWidth / container.clientHeight, 0.1, 1000);
+            camera.position.set(0, 1.6, targetCameraZ); // Human eye level
+
+            renderer = new THREE.WebGLRenderer({ antialias: true, alpha: false });
+            renderer.setSize(container.clientWidth, container.clientHeight);
+            renderer.setPixelRatio(Math.min(window.devicePixelRatio, 2));
+            renderer.shadowMap.enabled = true;
+            renderer.shadowMap.type = THREE.PCFSoftShadowMap;
+            container.appendChild(renderer.domElement);
+
+            raycaster = new THREE.Raycaster();
+            mouse = new THREE.Vector2();
+
+            // Ambient glow
+            const ambientLight = new THREE.AmbientLight(0xfffaed, 0.45);
+            scene.add(ambientLight);
+
+            // Subtle directional sunlight
+            const dirLight = new THREE.DirectionalLight(0xffdf85, 0.5);
+            dirLight.position.set(5, 10, 5);
+            scene.add(dirLight);
+
+            // Floor (Polished White/Emerald Tile with a Grand Red Carpet Runner in Center)
+            const floorGeo = new THREE.PlaneGeometry(12, hallwayLength * 1.5);
+            // Use custom canvas for carpet and tile texture
+            const floorCanvas = document.createElement('canvas');
+            floorCanvas.width = 512;
+            floorCanvas.height = 512;
+            const fCtx = floorCanvas.getContext('2d');
+            fCtx.fillStyle = '#0a2316'; // Side tiles emerald green
+            fCtx.fillRect(0, 0, 512, 512);
+            // Draw red carpet in center
+            fCtx.fillStyle = '#9e1a1a';
+            fCtx.fillRect(128, 0, 256, 512);
+            // Draw golden borders for the carpet
+            fCtx.fillStyle = '#d4af37';
+            fCtx.fillRect(124, 0, 6, 512);
+            fCtx.fillRect(382, 0, 6, 512);
+            // Draw luxury pattern lines on carpet
+            fCtx.strokeStyle = 'rgba(255, 223, 0, 0.15)';
+            fCtx.lineWidth = 2;
+            for(let py = 0; py < 512; py += 32) {
+                fCtx.beginPath();
+                fCtx.moveTo(128, py);
+                fCtx.lineTo(384, py);
+                fCtx.stroke();
+            }
+
+            const floorTex = new THREE.CanvasTexture(floorCanvas);
+            floorTex.wrapS = THREE.RepeatWrapping;
+            floorTex.wrapT = THREE.RepeatWrapping;
+            floorTex.repeat.set(1, 40);
+
+            const floorMat = new THREE.MeshStandardMaterial({
+                map: floorTex,
+                roughness: 0.12,
+                metalness: 0.45
+            });
+            const floorMesh = new THREE.Mesh(floorGeo, floorMat);
+            floorMesh.rotation.x = -Math.PI / 2;
+            floorMesh.position.y = 0;
+            floorMesh.position.z = -hallwayLength / 2 + 10;
+            scene.add(floorMesh);
+
+            // Side Walls (Left and Right Elegant Panels)
+            const wallGeo = new THREE.PlaneGeometry(hallwayLength * 1.5, 5);
+            const wallCanvas = document.createElement('canvas');
+            wallCanvas.width = 1024;
+            wallCanvas.height = 256;
+            const wCtx = wallCanvas.getContext('2d');
+            wCtx.fillStyle = '#fafaf9'; // Crisp Elegant White Walls
+            wCtx.fillRect(0, 0, 1024, 256);
+            // Draw Gold Accents and islamic horizontal line ornaments
+            wCtx.fillStyle = '#d4af37';
+            wCtx.fillRect(0, 10, 1024, 4); // Top strip
+            wCtx.fillRect(0, 240, 1024, 6); // Bottom skirting board
+            // Middle Islamic stars row
+            wCtx.strokeStyle = 'rgba(212,175,55,0.4)';
+            wCtx.lineWidth = 1;
+            for(let wx = 0; wx < 1024; wx += 64) {
+                wCtx.beginPath();
+                wCtx.arc(wx, 128, 4, 0, Math.PI * 2);
+                wCtx.stroke();
+            }
+
+            const wallTex = new THREE.CanvasTexture(wallCanvas);
+            wallTex.wrapS = THREE.RepeatWrapping;
+            wallTex.wrapT = THREE.RepeatWrapping;
+            wallTex.repeat.set(20, 1);
+
+            const wallMat = new THREE.MeshStandardMaterial({
+                map: wallTex,
+                roughness: 0.2,
+                bumpScale: 0.05
+            });
+
+            const leftWall = new THREE.Mesh(wallGeo, wallMat);
+            leftWall.position.set(-6, 2.5, -hallwayLength/2 + 10);
+            leftWall.rotation.y = Math.PI / 2;
+            scene.add(leftWall);
+
+            const rightWall = leftWall.clone();
+            rightWall.position.x = 6;
+            rightWall.rotation.y = -Math.PI / 2;
+            scene.add(rightWall);
+
+            // Ceiling (Dark Modern Islamic Grid)
+            const ceilingGeo = new THREE.PlaneGeometry(12, hallwayLength * 1.5);
+            const ceilingMat = new THREE.MeshStandardMaterial({
+                color: 0x05120a,
+                roughness: 0.8
+            });
+            const ceilingMesh = new THREE.Mesh(ceilingGeo, ceilingMat);
+            ceilingMesh.rotation.x = Math.PI / 2;
+            ceilingMesh.position.set(0, 5, -hallwayLength/2 + 10);
+            scene.add(ceilingMesh);
+
+            const chandelierGeo = new THREE.SphereGeometry(0.12, 16, 16);
+            for (let z = 10; z > -hallwayLength; z -= 12) {
+                // Main Lamp Glow Source
+                const lightColor = 0xffdf85;
+                const pl = new THREE.PointLight(lightColor, 0.7, 10);
+                pl.position.set(0, 4.3, z);
+                scene.add(pl);
+
+                const bulbMat = new THREE.MeshBasicMaterial({ color: lightColor });
+                const bulb = new THREE.Mesh(chandelierGeo, bulbMat);
+                bulb.position.set(0, 4.3, z);
+                scene.add(bulb);
+
+                // Hanging gold chain (rod cylinder)
+                const rodGeo = new THREE.CylinderGeometry(0.015, 0.015, 0.7, 8);
+                const rodMat = new THREE.MeshStandardMaterial({ color: 0xd4af37, metalness: 0.8 });
+                const rod = new THREE.Mesh(rodGeo, rodMat);
+                rod.position.set(0, 4.65, z);
+                scene.add(rod);
+            }
+
+            let leftCount = 0;
+            let rightCount = 0;
+            
+            students.forEach((student, idx) => {
+                const texture = createTextCanvasTexture(student, idx);
+                const framePicMat = new THREE.MeshStandardMaterial({
+                    map: texture,
+                    roughness: 0.2,
+                    metalness: 0.1
+                });
+                
+                // Beveled Outer Gold Frame Box
+                const outerFrameGeo = new THREE.BoxGeometry(frameScale + 0.15, frameScale + 0.15, 0.1);
+                const outerFrameMat = new THREE.MeshStandardMaterial({
+                    color: 0xd4af37, // Gold Color
+                    roughness: 0.15,
+                    metalness: 0.85
+                });
+                const frameMeshGroup = new THREE.Group();
+
+                const outerMesh = new THREE.Mesh(outerFrameGeo, outerFrameMat);
+                frameMeshGroup.add(outerMesh);
+
+                // Inner picture plane
+                const picGeo = new THREE.PlaneGeometry(frameScale, frameScale);
+                const picMesh = new THREE.Mesh(picGeo, framePicMat);
+                picMesh.position.z = 0.06; // Placed slightly in front of backplate
+                frameMeshGroup.add(picMesh);
+
+                // Determine side positioning (Alternating)
+                let zPos, xPos, rotationY;
+                if (idx % 2 === 0) {
+                    // Left Side
+                    xPos = -5.9;
+                    zPos = 6 - (leftCount * stepSize);
+                    rotationY = Math.PI / 2;
+                    leftCount++;
+                } else {
+                    // Right Side
+                    xPos = 5.9;
+                    zPos = 6 - (rightCount * stepSize);
+                    rotationY = -Math.PI / 2;
+                    rightCount++;
+                }
+
+                frameMeshGroup.position.set(xPos, 2.2, zPos);
+                frameMeshGroup.rotation.y = rotationY;
+                
+                // Attach custom parameters for interactive Raycasting clicks
+                frameMeshGroup.userData = {
+                    studentId: student.id,
+                    studentData: student,
+                    canvas: texture.image
+                };
+
+                scene.add(frameMeshGroup);
+                framesArray.push(frameMeshGroup);
+            });
+
+            const endOffsetZ = -hallwayLength + 10; // Location at end of hallway
+
+            // Large Archway Decoration (Modern Islamic Geometric Design)
+            const archGroup = new THREE.Group();
+            const archPillarGeo = new THREE.BoxGeometry(0.8, 5, 0.8);
+            const archMat = new THREE.MeshStandardMaterial({ color: 0x052113, roughness: 0.4, metalness: 0.7 });
+            
+            const p1 = new THREE.Mesh(archPillarGeo, archMat);
+            p1.position.set(-4.5, 2.5, endOffsetZ);
+            const p2 = p1.clone();
+            p2.position.x = 4.5;
+            
+            const archTopGeo = new THREE.BoxGeometry(10, 0.6, 0.8);
+            const archTop = new THREE.Mesh(archTopGeo, archMat);
+            archTop.position.set(0, 5, endOffsetZ);
+
+            archGroup.add(p1, p2, archTop);
+            scene.add(archGroup);
+
+            // Large Spotlight on Podium
+            const spotLight = new THREE.SpotLight(0xffdf85, 2.5, 20, Math.PI / 4, 0.5, 1);
+            spotLight.position.set(0, 4.8, endOffsetZ + 4);
+            spotLight.target.position.set(0, 0.5, endOffsetZ);
+            scene.add(spotLight);
+            scene.add(spotLight.target);
+
+            // Render 3 Podium Cylinder Stands
+            // 1st (Gold)
+            const podGoldGeo = new THREE.CylinderGeometry(0.9, 1.0, 1.3, 32);
+            const goldMat = new THREE.MeshStandardMaterial({ color: 0xffdf00, metalness: 0.9, roughness: 0.1 });
+            const podGold = new THREE.Mesh(podGoldGeo, goldMat);
+            podGold.position.set(0, 0.65, endOffsetZ - 3);
+            scene.add(podGold);
+
+            // 2nd (Silver)
+            const podSilverGeo = new THREE.CylinderGeometry(0.8, 0.9, 0.9, 32);
+            const silverMat = new THREE.MeshStandardMaterial({ color: 0xc0c0c0, metalness: 0.9, roughness: 0.1 });
+            const podSilver = new THREE.Mesh(podSilverGeo, silverMat);
+            podSilver.position.set(-2.2, 0.45, endOffsetZ - 3.2);
+            scene.add(podSilver);
+
+            // 3rd (Bronze)
+            const podBronzeGeo = new THREE.CylinderGeometry(0.7, 0.8, 0.6, 32);
+            const bronzeMat = new THREE.MeshStandardMaterial({ color: 0xcd7f32, metalness: 0.9, roughness: 0.1 });
+            const podBronze = new THREE.Mesh(podBronzeGeo, bronzeMat);
+            podBronze.position.set(2.2, 0.3, endOffsetZ - 3.4);
+            scene.add(podBronze);
+
+            // Place floating Custom Trophy shapes on top of each podium
+            const trophyCupGeo = new THREE.ConeGeometry(0.2, 0.4, 16);
+            const trophyBaseGeo = new THREE.CylinderGeometry(0.12, 0.15, 0.1, 16);
+            
+            // 1st Trophy Group
+            const trophy1 = new THREE.Group();
+            const cup1 = new THREE.Mesh(trophyCupGeo, goldMat);
+            cup1.rotation.x = Math.PI;
+            cup1.position.y = 0.35;
+            const base1 = new THREE.Mesh(trophyBaseGeo, goldMat);
+            base1.position.y = 0.1;
+            trophy1.add(cup1, base1);
+            trophy1.position.set(0, 1.3, endOffsetZ - 3);
+            scene.add(trophy1);
+
+            // 2nd Trophy Group
+            const trophy2 = new THREE.Group();
+            const cup2 = new THREE.Mesh(trophyCupGeo, silverMat);
+            cup2.rotation.x = Math.PI;
+            cup2.position.y = 0.35;
+            const base2 = new THREE.Mesh(trophyBaseGeo, silverMat);
+            base2.position.y = 0.1;
+            trophy2.add(cup2, base2);
+            trophy2.position.set(-2.2, 0.9, endOffsetZ - 3.2);
+            scene.add(trophy2);
+
+            // 3rd Trophy Group
+            const trophy3 = new THREE.Group();
+            const cup3 = new THREE.Mesh(trophyCupGeo, bronzeMat);
+            cup3.rotation.x = Math.PI;
+            cup3.position.y = 0.35;
+            const base3 = new THREE.Mesh(trophyBaseGeo, bronzeMat);
+            base3.position.y = 0.1;
+            trophy3.add(cup3, base3);
+            trophy3.position.set(2.2, 0.6, endOffsetZ - 3.4);
+            scene.add(trophy3);
+
+            // Connect window resize action
+            window.addEventListener('resize', onWindowResize);
+            
+            // Connect click raycasting detection
+            window.addEventListener('click', onSceneClick);
+            window.addEventListener('touchend', onSceneTouchEnd);
+
+            // Complete setup trigger
+            loadingComplete = true;
+        }
+
+        function onWindowResize() {
+            const container = document.getElementById('canvas-container');
+            camera.aspect = container.clientWidth / container.clientHeight;
+            camera.updateProjectionMatrix();
+            renderer.setSize(container.clientWidth, container.clientHeight);
+        }
+
+
+        // -------------------------------------------------------------
+        // INTERACTIONS AND EVENT HANDLING
+        // -------------------------------------------------------------
+        
+        // Custom touch swiping translation variables for mobile/tablet ease
+        let touchStartY = 0;
+        let isTouching = false;
+
+        window.addEventListener('touchstart', (e) => {
+            if (e.touches.length > 0) {
+                touchStartY = e.touches[0].clientY;
+                isTouching = true;
+            }
+        });
+
+        window.addEventListener('touchmove', (e) => {
+            if (!isTouching || e.touches.length === 0) return;
+            const currentY = e.touches[0].clientY;
+            const deltaY = currentY - touchStartY;
+            
+            // Translate swipe into smooth walking movement
+            targetCameraZ += deltaY * 0.04;
+            // Bound movement
+            targetCameraZ = Math.max(-hallwayLength, Math.min(15, targetCameraZ));
+            touchStartY = currentY;
+
+            // Fade away guide helper HUD
+            document.getElementById('hud-guide').style.opacity = '0';
+        });
+
+        window.addEventListener('touchend', () => {
+            isTouching = false;
+        });
+
+        // Capture Mouse Scroll
+        window.addEventListener('wheel', (e) => {
+            // Check if student modal is open to avoid scrolling the hallway when reading bio
+            if (!document.getElementById('modal-student').classList.contains('hidden')) return;
+
+            // Smooth scroll multipliers
+            targetCameraZ += e.deltaY * 0.015;
+            
+            // Bound Z range to prevent camera escaping the visual zone
+            targetCameraZ = Math.max(-hallwayLength, Math.min(15, targetCameraZ));
+
+            // Hide instruction HUD after initial interaction
+            document.getElementById('hud-guide').style.opacity = '0';
+        });
+
+        // Click Handler (Raycasting targets)
+        function handleInteractionAtPoint(x, y) {
+            // Calculate mouse coordinates in normalized device coords (-1 to +1)
+            const container = document.getElementById('canvas-container');
+            const rect = renderer.domElement.getBoundingClientRect();
+            
+            mouse.x = ((x - rect.left) / rect.width) * 2 - 1;
+            mouse.y = -((y - rect.top) / rect.height) * 2 + 1;
+
+            raycaster.setFromCamera(mouse, camera);
+            const intersects = raycaster.intersectObjects(scene.children, true);
+
+            // Find if user clicked on any image frame
+            for (let item of intersects) {
+                let currentObj = item.object;
+                // Go up parent group to check custom properties
+                while (currentObj.parent && !currentObj.userData.studentData) {
+                    currentObj = currentObj.parent;
+                }
+
+                if (currentObj.userData.studentData) {
+                    const student = currentObj.userData.studentData;
+                    const frameCanvas = currentObj.userData.canvas;
+                    openStudentModal(student, frameCanvas);
+                    break;
+                }
+            }
+        }
+
+        function onSceneClick(e) {
+            handleInteractionAtPoint(e.clientX, e.clientY);
+        }
+
+        function onSceneTouchEnd(e) {
+            if (e.changedTouches.length > 0) {
+                handleInteractionAtPoint(e.changedTouches[0].clientX, e.changedTouches[0].clientY);
+            }
+        }
+
+        // -------------------------------------------------------------
+        // UI POPUP CONTROL & POPULATION
+        // -------------------------------------------------------------
+        
+        function openStudentModal(student, sourceCanvas) {
+            currentModalStudentId = student.id;
+            
+            // Setup name & details in text HTML markup
+            document.getElementById('student-name').innerText = student.name;
+            document.getElementById('student-parents').innerText = student.parent;
+            document.getElementById('student-address').innerText = student.address;
+            document.getElementById('student-hobby').innerText = student.hobby;
+            document.getElementById('student-dream').innerText = student.dream;
+            document.getElementById('student-nextschool').innerText = student.nextSchool;
+
+            // Render matching avatar specifically to the popup canvas container
+            const popupCanvas = document.getElementById('modal-photo-canvas');
+            const ctx = popupCanvas.getContext('2d');
+            popupCanvas.width = 300;
+            popupCanvas.height = 300;
+            
+            // Draw profile onto popup target canvas
+            drawStudentAvatar(popupCanvas, student.name, student.gender);
+
+            // Reveal modal wrapper
+            const modal = document.getElementById('modal-student');
+            modal.classList.remove('hidden');
+            setTimeout(() => {
+                modal.classList.remove('opacity-0');
+                modal.querySelector('.transform').classList.remove('scale-95');
+            }, 50);
+        }
+
+        function closeStudentModal() {
+            const modal = document.getElementById('modal-student');
+            modal.classList.add('opacity-0');
+            modal.querySelector('.transform').classList.add('scale-95');
+            setTimeout(() => {
+                modal.classList.add('hidden');
+                currentModalStudentId = null;
+            }, 300);
+        }
+
+        // Close Student modal on click outside content
+        document.getElementById('modal-student').addEventListener('click', (e) => {
+            if (e.target === document.getElementById('modal-student')) {
+                closeStudentModal();
+            }
+        });
+
+        // Close buttons listeners
+        document.getElementById('btn-close-student').addEventListener('click', closeStudentModal);
+
+        // Help Modal Controls
+        const modalInfo = document.getElementById('modal-info');
+        document.getElementById('btn-info').addEventListener('click', () => {
+            modalInfo.classList.remove('hidden');
+        });
+        document.getElementById('btn-close-info').addEventListener('click', () => {
+            modalInfo.classList.add('hidden');
+        });
+        document.getElementById('btn-close-info-ok').addEventListener('click', () => {
+            modalInfo.classList.add('hidden');
+        });
+
+        // Navigation Walk Button Logic (Great for smartphone taps)
+        document.getElementById('btn-walk-forward').addEventListener('click', () => {
+            targetCameraZ = Math.max(-hallwayLength, targetCameraZ - 8);
+            document.getElementById('hud-guide').style.opacity = '0';
+        });
+
+        document.getElementById('btn-walk-back').addEventListener('click', () => {
+            targetCameraZ = Math.min(15, targetCameraZ + 8);
+            document.getElementById('hud-guide').style.opacity = '0';
+        });
+
+
+        // -------------------------------------------------------------
+        // ENTER PORTAL START CODES
+        // -------------------------------------------------------------
+        document.getElementById('btn-enter').addEventListener('click', () => {
+            document.getElementById('opening-screen').classList.add('translate-y-full');
+            setTimeout(() => {
+                document.getElementById('opening-screen').style.display = 'none';
+            }, 1000);
+        });
+
+        // Restart gallery exploration from end of hallway
+        document.getElementById('btn-restart').addEventListener('click', () => {
+            // Hide grand finale
+            const finale = document.getElementById('finale-overlay');
+            finale.classList.add('opacity-0');
+            setTimeout(() => {
+                finale.classList.add('hidden');
+                toggleConfetti(false);
+            }, 1000);
+            
+            // Set camera back to starting position
+            targetCameraZ = 12;
+            currentCameraZ = 12;
+            camera.position.z = 12;
+        });
+
+        // -------------------------------------------------------------
+        // HIGH PERFORMANCE LIGHTWEIGHT CONFETTI PARTICLE SYSTEM
+        // -------------------------------------------------------------
+        const confettiCanvas = document.getElementById('confetti-canvas');
+        const confCtx = confettiCanvas.getContext('2d');
+        let confettiActive = false;
+        let confettiParticles = [];
+        const colors = ['#f43f5e', '#3b82f6', '#10b981', '#f59e0b', '#ec4899', '#8b5cf6', '#d4af37', '#ffffff'];
+
+        function initConfetti() {
+            confettiCanvas.width = window.innerWidth;
+            confettiCanvas.height = window.innerHeight;
+            confettiParticles = [];
+            for (let i = 0; i < 150; i++) {
+                confettiParticles.push({
+                    x: Math.random() * confettiCanvas.width,
+                    y: Math.random() * confettiCanvas.height - confettiCanvas.height,
+                    r: Math.random() * 6 + 4,
+                    d: Math.random() * confettiCanvas.height,
+                    color: colors[Math.floor(Math.random() * colors.length)],
+                    tilt: Math.random() * 10 - 5,
+                    tiltAngleIncremental: Math.random() * 0.07 + 0.02,
+                    tiltAngle: 0
+                });
+            }
+        }
+
+        function drawConfetti() {
+            if (!confettiActive) return;
+            confCtx.clearRect(0, 0, confettiCanvas.width, confettiCanvas.height);
+            
+            confettiParticles.forEach((p, index) => {
+                p.tiltAngle += p.tiltAngleIncremental;
+                p.y += (Math.cos(p.d) + 3 + p.r / 2) / 2;
+                p.x += Math.sin(p.tiltAngle);
+                p.tilt = Math.sin(p.tiltAngle - (index / 3)) * 15;
+
+                confCtx.beginPath();
+                confCtx.lineWidth = p.r;
+                confCtx.strokeStyle = p.color;
+                confCtx.moveTo(p.x + p.tilt + p.r / 2, p.y);
+                confCtx.lineTo(p.x + p.tilt, p.y + p.tilt + p.r / 2);
+                confCtx.stroke();
+
+                // Loop if particle hits bottom screen edge
+                if (p.y > confettiCanvas.height) {
+                    confettiParticles[index] = {
+                        x: Math.random() * confettiCanvas.width,
+                        y: -20,
+                        r: p.r,
+                        d: p.d,
+                        color: p.color,
+                        tilt: p.tilt,
+                        tiltAngleIncremental: p.tiltAngleIncremental,
+                        tiltAngle: p.tiltAngle
+                    };
+                }
+            });
+            requestAnimationFrame(drawConfetti);
+        }
+
+        function toggleConfetti(show) {
+            confettiActive = show;
+            if (show) {
+                confettiCanvas.classList.remove('hidden');
+                initConfetti();
+                drawConfetti();
+            } else {
+                confettiCanvas.classList.add('hidden');
+                confCtx.clearRect(0, 0, confettiCanvas.width, confettiCanvas.height);
+            }
+        }
+
+        window.addEventListener('resize', () => {
+            if (confettiActive) {
+                confettiCanvas.width = window.innerWidth;
+                confettiCanvas.height = window.innerHeight;
+            }
+        });
+
+        // -------------------------------------------------------------
+        // -------------------------------------------------------------
+        // RENDER LOOP AND PHYSICS ENGINE
+        
+        let hasReachedEnd = false;
+
+        function animate() {
+            requestAnimationFrame(animate);
+
+            if (!loadingComplete) return;
+
+            // Smooth Interpolation (Lerp) for walk physics movement
+            currentCameraZ += (targetCameraZ - currentCameraZ) * 0.08;
+            camera.position.z = currentCameraZ;
+
+            // Slowly bob camera up and down as they walk to simulate walking head bobbing
+            const bobAmount = Math.sin(camera.position.z * 1.5) * 0.025;
+            camera.position.y = 1.6 + (Math.abs(targetCameraZ - currentCameraZ) > 0.02 ? bobAmount : 0);
+
+            // Calculate progress along hallway
+            // hallwayLength goes down to negative values, progress translates start (12) to end (-hallwayLength)
+            const totalDistance = hallwayLength + 12;
+            const currentDistanceCovered = 12 - currentCameraZ;
+            const percentage = Math.max(0, Math.min(100, Math.floor((currentDistanceCovered / totalDistance) * 100)));
+            
+            document.getElementById('progress-bar').style.width = `${percentage}%`;
+            document.getElementById('progress-text').innerText = `${percentage}%`;
+
+            // Hover effects on nearest frames
+            framesArray.forEach(frame => {
+                // Subtle rotation hover on close proximity
+                const distanceToCam = Math.abs(frame.position.z - camera.position.z);
+                if (distanceToCam < 5) {
+                    // Frame slowly emerges out slightly towards center
+                    const pushFactor = Math.sin(distanceToCam / 5 * Math.PI) * 0.15;
+                    if (frame.position.x < 0) {
+                        frame.position.x = -5.9 + pushFactor;
+                    } else {
+                        frame.position.x = 5.9 - pushFactor;
+                    }
+                } else {
+                    // Reset to default flush wall position
+                    if (frame.position.x < 0) frame.position.x = -5.9;
+                    else frame.position.x = 5.9;
+                }
+            });
+
+            // Check if user reached the end of hallway podium trigger (Z near endOffsetZ)
+            const targetTriggerZ = -hallwayLength + 20;
+            if (currentCameraZ <= targetTriggerZ) {
+                if (!hasReachedEnd) {
+                    hasReachedEnd = true;
+                    // Trigger Grand Finale Screen reveal
+                    triggerGrandFinaleReveal();
+                }
+            } else {
+                hasReachedEnd = false;
+            }
+
+            renderer.render(scene, camera);
+        }
+
+        function triggerGrandFinaleReveal() {
+            const finale = document.getElementById('finale-overlay');
+            finale.classList.remove('hidden');
+            setTimeout(() => {
+                finale.classList.remove('opacity-0');
+                // Trigger celebratory confetti effect
+                toggleConfetti(true);
+            }, 50);
+
+            // Populates 3 Podium winner photo canvases specifically
+            drawStudentAvatar(document.getElementById('podium-1-canvas'), students[0].name, students[0].gender, true);
+            drawStudentAvatar(document.getElementById('podium-2-canvas'), students[1].name, students[1].gender);
+            drawStudentAvatar(document.getElementById('podium-3-canvas'), students[2].name, students[2].gender);
+        }
+
+        // -------------------------------------------------------------
+        // WINDOW ONLOAD LAUNCHER
+        // -------------------------------------------------------------
+        window.onload = function() {
+            initThreeJS();
+            animate();
+        };
+    </script>
+</body>
+</html>
